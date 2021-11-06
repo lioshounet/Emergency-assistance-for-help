@@ -1,6 +1,6 @@
 <template>
   <div>
-    choose
+    choose(准备施工)
     <br />
     <br />
     <div @click="UPresources()">物质管理</div>
