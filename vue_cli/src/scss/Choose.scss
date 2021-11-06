@@ -7,14 +7,37 @@
     background-color: rgb(64, 158, 255);
 }
 
+.mian_map {
+    width: 450px;
+    height: 420px;
+}
+  
+.BMap_cpyCtrl {
+    display: none;
+}
+.anchorBL {
+    display: none;
+}
+
+
 .el-main{
     .zhu{
         font-size: 30px;
     }
     .card-box{
         margin-top: 100px;
-      
-        
+        .main_R{
+            img{
+                width: 450px;
+                // height: 420px;
+            }
+        }
+        .main_map{
+            img{
+                width: 450px;
+                // height: 420px;
+            }
+        }
         .el-card{
             display: inline-block;
             width: 15%;

@@ -17,8 +17,11 @@
           </p>
         </div>
         <div class="card-box">
+          <!-- 第一卡片组 -------------------------------------------------->
           <el-popover placement="left" width="400" trigger="hover">
-            <div>123</div>
+            <div class="main_R">
+              <img src="img/the_main/mian_R.png" alt="" width="400px" />
+            </div>
             <el-card :body-style="{ padding: '0px' }" slot="reference">
               <div @click="UPresources()">
                 <img
@@ -37,11 +40,12 @@
               </div>
             </el-card>
           </el-popover>
+          <!-- 第二卡片组 -------------------------------------------------->
           <el-popover placement="right" width="400" trigger="hover">
-            <div style="display: inline-block">
-              <img src="" alt="" />
-              456
+            <div class="mapbox">
+              <img src="img/the_main/main_map.png" alt="" />
             </div>
+
             <el-card :body-style="{ padding: '0px' }" slot="reference">
               <div @click="forsave()">
                 <img
@@ -72,11 +76,22 @@
 </style>
 
 <script>
+import BaiduMap from "vue-baidu-map/components/map/Map.vue";
+import BmView from "vue-baidu-map/components/map/MapView"; //地图视图
+import BmLocalSearch from "vue-baidu-map/components/search/LocalSearch"; //搜索
+import BmMarker from "vue-baidu-map/components/overlays/Marker"; //点标注
+import BmInfoWindow from "vue-baidu-map/components/overlays/InfoWindow"; //标注弹窗
 const axios = require("axios");
 
 export default {
   // name: "EmergencyAssistanceForHelpAbout",
-
+  components: {
+    BaiduMap,
+    BmView,
+    BmLocalSearch,
+    BmMarker,
+    BmInfoWindow,
+  },
   data() {
     return {};
   },
