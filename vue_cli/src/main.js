@@ -5,8 +5,12 @@ import BaiduMap from 'vue-baidu-map'
 import { BmlMarkerClusterer } from 'vue-baidu-map'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import VAnimateCss from 'v-animate-css';
+
+Vue.use(VAnimateCss);
 
 Vue.use(ElementUI);
+// Vue.use(VAnimateCss);
 
 Vue.component('bml-marker-cluster', BmlMarkerClusterer)
 
