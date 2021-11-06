@@ -1,0 +1,38 @@
+body {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.loginbox .el-carousel {
+  position: absolute;
+  z-index: -1;
+}
+
+.loginbox .el-carousel .el-carousel__container {
+  width: 1920px;
+  height: 920px;
+}
+
+.loginbox .el-carousel .el-carousel__container img {
+  filter: blur(5px);
+  width: 100%;
+}
+
+.loginbox .el-card {
+  position: absolute;
+  border-radius: 20px;
+  width: 30%;
+  height: 47%;
+  margin-left: 35%;
+  margin-top: 8%;
+  opacity: 0.9;
+}
+
+.loginbox .el-card .header span {
+  font-size: 30px;
+}
+
+.loginbox .el-card .el-button {
+  width: 30%;
+  margin-top: 5%;
+}

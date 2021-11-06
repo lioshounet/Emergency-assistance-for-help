@@ -1,0 +1,29 @@
+.MyResources{
+    .el-card{
+        display: inline-block;
+        margin-left: 4%;
+        margin-bottom: 20px;
+        width: 20%;
+        height: 800px;
+        img{
+            display: block;
+            // float: left;
+            margin:4%;
+            width: 90%; 
+            // height: 35%;
+        }
+        .more{
+            display: block;
+            width: 100%;
+            margin-top: 10%;
+            height: 40%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .stepbox{
+            display: block;
+            width: 100%;
+            height: 250px;
+        }
+    }
+}
