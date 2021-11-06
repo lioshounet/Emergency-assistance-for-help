@@ -1,11 +1,22 @@
 <template>
   <div>
     <el-container>
-      <el-header></el-header>
+      <!-- <el-header></el-header> -->
       <el-main>
+        <el-carousel trigger="click" :interval="2000">
+          <el-carousel-item
+            v-for="item in imgarr"
+            :key="item"
+            :height="'800px'"
+          >
+            <!-- <h3 class="small">{{ item }}</h3> -->
+            <img :src="item" alt="" height="920px" />
+          </el-carousel-item>
+        </el-carousel>
+        <!-- 轮播图上面部分---------------- -->
         <br />
         <br />
-        <div>
+        <div class="talk">
           <p class="zhu">每一份帮助都值得被尊重</p>
           <p>
             <br />
@@ -14,6 +25,7 @@
             5·12汶川地震的地震波确认共环绕了地球6圈
             <br />
             地震波及大半个中国以及亚洲多个国家和地区，中国国内北至内蒙古，东至上海，西至西藏
+            <br />
           </p>
         </div>
         <div class="card-box">
@@ -76,24 +88,19 @@
 </style>
 
 <script>
-import BaiduMap from "vue-baidu-map/components/map/Map.vue";
-import BmView from "vue-baidu-map/components/map/MapView"; //地图视图
-import BmLocalSearch from "vue-baidu-map/components/search/LocalSearch"; //搜索
-import BmMarker from "vue-baidu-map/components/overlays/Marker"; //点标注
-import BmInfoWindow from "vue-baidu-map/components/overlays/InfoWindow"; //标注弹窗
 const axios = require("axios");
 
 export default {
   // name: "EmergencyAssistanceForHelpAbout",
-  components: {
-    BaiduMap,
-    BmView,
-    BmLocalSearch,
-    BmMarker,
-    BmInfoWindow,
-  },
+  components: {},
   data() {
-    return {};
+    return {
+      imgarr: [
+        "img/Disaster assistance/Rescue1.jpg",
+        "img/Disaster assistance/Rescue2.jpg",
+        "img/Disaster assistance/Rescue3.jpg",
+      ],
+    };
   },
 
   mounted() {},

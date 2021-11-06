@@ -20,7 +20,37 @@
   display: none;
 }
 
-.el-main .zhu {
+.el-main {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 !important;
+}
+
+.el-main .el-carousel {
+  position: absolute;
+  margin-top: 8px;
+  z-index: -1;
+}
+
+.el-main .el-carousel .el-carousel__container {
+  width: 1920px;
+  height: 920px;
+}
+
+.el-main .el-carousel .el-carousel__container img {
+  filter: blur(15px);
+  width: 100%;
+  height: 920px;
+}
+
+.el-main .talk {
+  margin: auto;
+  margin-top: 80px;
+  width: 35%;
+  color: white;
+}
+
+.el-main .talk .zhu {
   font-size: 30px;
 }
 
@@ -38,6 +68,7 @@
 
 .el-main .card-box .el-card {
   display: inline-block;
+  border-radius: 20px;
   width: 15%;
   height: 450px;
   margin-left: 2.5%;
