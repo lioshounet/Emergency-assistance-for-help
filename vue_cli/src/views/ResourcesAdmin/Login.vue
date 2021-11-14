@@ -53,7 +53,7 @@ export default {
       form: {
         name: "",
         passwd: "",
-        man_type: "",
+        man_type: "普通用户",
       },
     };
   },
@@ -62,12 +62,21 @@ export default {
   methods: {
     login() {
       if (this.form.name != "" && this.form.passwd != "") {
-        this.$router.push({ name: "Resources" }).then(
-          this.$message({
-            message: "登录成功",
-            type: "success",
-          })
-        );
+        if (this.form.man_type == "普通用户")
+          this.$router.push({ name: "Resources" }).then(
+            this.$message({
+              message: "登录成功",
+              type: "success",
+            })
+          );
+        else {
+          this.$router.push({ name: "Admin" }).then(
+            this.$message({
+              message: "登录成功",
+              type: "success",
+            })
+          );
+        }
       } else {
         this.$message.error("密码或者账号为空");
       }

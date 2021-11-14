@@ -10,13 +10,10 @@
             </template>
             <el-menu-item-group>
               <el-menu-item index="1-1" @click="MyResources()">
-                我的物质
+                物资审核
               </el-menu-item>
               <el-menu-item index="1-2" @click="Resourcesmap()">
-                物质使用
-              </el-menu-item>
-              <el-menu-item index="1-3" @click="Myinfo()">
-                个人信息
+                显示求救
               </el-menu-item>
             </el-menu-item-group>
           </el-submenu>
@@ -27,9 +24,10 @@
           <span>{{ user1info.name }}</span>
         </el-header>
         <el-main>
-          <Myinfo v-show="showwhat.Myinfo"></Myinfo>
-          <MyResources v-show="showwhat.MyResources"></MyResources>
-          <Resourcesmap v-show="showwhat.Resourcesmap"></Resourcesmap>
+          <AdminR v-show="showwhat.MyResources"></AdminR>
+          <AdminSave v-show="showwhat.Resourcesmap"></AdminSave>
+
+          <!-- <Resourcesmap v-show="showwhat.Resourcesmap"></Resourcesmap> -->
         </el-main>
       </el-container>
     </el-container>
@@ -59,15 +57,17 @@
 </style>
 
 <script>
-import Myinfo from "./ResourcesShowWhat/Myinfo";
-import MyResources from "./ResourcesShowWhat/MyResources";
-import Resourcesmap from "./ResourcesShowWhat/ResourcesUse";
+// import Myinfo from "./ShowWhat/Myinfo";
+import AdminR from "./AdminShowWhat/AdminR";
+import AdminSave from "./AdminShowWhat/AdminR";
+// import Resourcesmap from "./ShowWhat/ResourcesUse";
 const axios = require("axios");
 export default {
   components: {
-    Myinfo,
-    MyResources,
-    Resourcesmap,
+    // Myinfo,
+    AdminR,
+    AdminSave,
+    // Resourcesmap,
   },
   name: "EmergencyAssistanceForHelpResourcesmap",
 
@@ -94,11 +94,6 @@ export default {
   },
 
   methods: {
-    Myinfo() {
-      this.showwhat.Myinfo = 1;
-      this.showwhat.MyResources = 0;
-      this.showwhat.Resourcesmap = 0;
-    },
     MyResources() {
       this.showwhat.Myinfo = 0;
       this.showwhat.MyResources = 1;

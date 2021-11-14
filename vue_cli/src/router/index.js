@@ -32,6 +32,11 @@ const routes = [
     name: 'Resources',
     component: () => import(/* webpackChunkName: "SaveMe" */ '../views/ResourcesAdmin/AfterLogin/ResourcesSkeleton.vue'),
   },
+  {
+    path: '/Admin',
+    name: 'Admin',
+    component: () => import(/* webpackChunkName: "SaveMe" */ '../views/ResourcesAdmin/AfterLogin/AdminSkeleton.vue'),
+  },
   // {
   //   path: './../compon',
   //   name: 'ResourcesMap',

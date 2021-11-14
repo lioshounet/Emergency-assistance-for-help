@@ -1,6 +1,7 @@
 .ResourcesUse .el-card {
   display: inline-block;
   margin-left: 4%;
+  margin-top: 20px;
   margin-bottom: 20px;
   width: 45%;
   height: 400px;

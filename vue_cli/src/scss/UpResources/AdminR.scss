@@ -1,16 +1,18 @@
 .MyResources{
     .el-card{
-        display: inline-block;
-        margin-left: 4%;
-        margin-top:20px;
+        // display: inline-block;
+        float: left;
+        margin-left: 2%;
         margin-bottom: 20px;
-        width: 20%;
-        height: 800px;
+        margin-top: 20px;
+        width: 30%;
+        height: 400px;
         img{
             display: block;
             // float: left;
-            margin:4%;
-            width: 90%; 
+            width: 30%; 
+            // margin:6%;
+            margin-left: 160px;
             // height: 35%;
         }
         .more{
@@ -21,10 +23,13 @@
             margin-top: 20px;
             margin-bottom: 20px;
         }
-        .stepbox{
-            display: block;
+        .el-radio-group{
             width: 100%;
-            height: 250px;
+            
+        }
+        #upbu{
+            display: block;
+            margin-top: 10px;
         }
     }
 }

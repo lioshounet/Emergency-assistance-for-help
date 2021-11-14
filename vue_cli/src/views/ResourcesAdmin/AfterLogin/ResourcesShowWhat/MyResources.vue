@@ -50,7 +50,7 @@ export default {
   mounted() {
     axios({
       method: "GET",
-      url: "http://localhost:3000/user1",
+      url: "http://localhost:3000/user1R",
     }).then((response) => {
       this.Resources_msg = response.data;
       // console.log(response.data);
