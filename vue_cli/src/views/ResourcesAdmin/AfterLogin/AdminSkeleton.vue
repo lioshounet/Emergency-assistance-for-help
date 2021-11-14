@@ -59,7 +59,7 @@
 <script>
 // import Myinfo from "./ShowWhat/Myinfo";
 import AdminR from "./AdminShowWhat/AdminR";
-import AdminSave from "./AdminShowWhat/AdminR";
+import AdminSave from "./AdminShowWhat/AdminS";
 // import Resourcesmap from "./ShowWhat/ResourcesUse";
 const axios = require("axios");
 export default {

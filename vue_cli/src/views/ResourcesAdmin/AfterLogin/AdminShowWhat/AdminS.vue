@@ -1,31 +1,56 @@
 <template>
   <div class="MyResources">
     <!-- 我的资源----管理使用界面 -->
-    <el-card class="box-card" v-for="(card, index) in Resources_msg">
-      <div slot="header" class="clearfix">
-        <span>{{ card.name }}</span>
-      </div>
-      <img :src="card.img" alt="" />
-      <div>
-        <div class="more">
-          <p>共计{{ card.nmb }}个</p>
-        </div>
-        <div class="stepbox">
-          <el-radio-group v-model="card.how">
-            <el-radio-button label="1">审核</el-radio-button>
-            <el-radio-button label="2">快递捡包</el-radio-button>
-            <el-radio-button label="3">运输</el-radio-button>
-            <el-radio-button label="4">到站检查</el-radio-button>
-            <el-radio-button label="5">入库</el-radio-button>
-          </el-radio-group>
-        </div>
-      </div>
-    </el-card>
+    <el-tabs type="border-card">
+      <el-tab-pane label="求救信息">
+        <el-card class="box-card" v-for="(card, index) in Save_msg">
+          <el-descriptions title="求救信息">
+            <el-descriptions-item label="经度">
+              <!-- kooriookami -->
+              {{ card.lng }}
+            </el-descriptions-item>
+            <br />
+            <el-descriptions-item label="维度">
+              {{ card.lat }}
+            </el-descriptions-item>
+            <!-- <el-descriptions-item label="居住地">苏州市</el-descriptions-item> -->
+
+            <el-descriptions-item label="类型" class="ty">
+              <el-tag size="small" v-for="t in card.type">台风</el-tag>
+            </el-descriptions-item>
+            <el-descriptions-item label="备注">
+              {{ card.more }}
+            </el-descriptions-item>
+          </el-descriptions>
+        </el-card>
+      </el-tab-pane>
+      <el-tab-pane label="物资索取">
+        <el-card class="box-card" v-for="(card, index) in Resources_msg">
+          <el-descriptions title="求救信息" column="2">
+            <el-descriptions-item label="经度">
+              <!-- kooriookami -->
+              {{ card.lng }}
+            </el-descriptions-item>
+            <br />
+            <el-descriptions-item label="维度">
+              {{ card.lat }}
+            </el-descriptions-item>
+            <el-descriptions-item label="电话">
+              {{ card.tel }}
+            </el-descriptions-item>
+            <!-- <el-descriptions-item label="居住地">苏州市</el-descriptions-item> -->
+            <el-descriptions-item label="备注">
+              {{ card.more }}
+            </el-descriptions-item>
+          </el-descriptions>
+        </el-card></el-tab-pane
+      >
+    </el-tabs>
   </div>
 </template>
 
 <style>
-@import url("./../../../../scss/UpResources/AdminR.css");
+@import url("./../../../../scss/UpResources/AdminS.css");
 </style>
 
 <script>
@@ -36,13 +61,22 @@ export default {
   data() {
     return {
       Resources_msg: [],
+      Save_msg: [],
     };
   },
 
   mounted() {
     axios({
       method: "GET",
-      url: "http://localhost:3000/ResourcesUse",
+      url: "http://localhost:3000/save_msg",
+    }).then((response) => {
+      this.Save_msg = response.data;
+      // console.log(response.data);
+      // console.log(this.Resources_msg);
+    });
+    axios({
+      method: "GET",
+      url: "http://localhost:3000/AskResources",
     }).then((response) => {
       this.Resources_msg = response.data;
       // console.log(response.data);
